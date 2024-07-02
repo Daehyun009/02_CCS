@@ -1,0 +1,158 @@
+* {
+  /* content + padding + border */
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  border: 1px solid black;
+}
+
+/* 상하 2분할 */
+.container-1 {
+  width: 500px;
+  height: 600px;
+  margin: 20px;
+}
+
+.container-1>div {
+  width: 100%;
+  /* 부모 너비와 동일 */
+  height: 50%;
+  /* 부모 너비의 절반 */
+}
+
+.container-1>div:first-child {
+  background-color: #fffab7;
+}
+
+.container-1>div:last-child {
+  background-color: lightcoral;
+}
+
+.container-2 {
+  width: 300px;
+  height: 432px;
+}
+
+.box1 {
+  width: 100%;
+  height: 50%;
+  background-color: lightblue;
+}
+
+.box2 {
+  width: 100%;
+  height: 30%;
+  background-color: lightcoral;
+}
+
+.box3 {
+  width: 100%;
+  height: 20%;
+  background-color: lightcyan;
+}
+
+.container-2>div:first-child {
+  width: 100%;
+  height: 50%;
+  background-color: lightblue;
+}
+
+.container-2>div:nth-child(2) {
+  width: 100%;
+  height: 30%;
+  background-color: lightcoral;
+}
+
+.container-2>div:last-child {
+  width: 100%;
+  height: 20%;
+  background-color: lightcyan;
+}
+
+/* 가로 5:5 분할 */
+.container-3 {
+  width: 300px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+}
+
+.container-3>div {
+  width: 50%;
+  height: 100%;
+}
+
+/* 가로 5 분할 */
+.container-4 {
+  width: 600px;
+  height: 100px;
+  margin: 20px;
+  display: flex;
+
+  /* flex-direction 중심축 기본 값 : row */
+  flex-direction: row;
+
+  /* 
+    flex container 교차축 정렬 기본값 : stretch
+    ->세로 방향으로 item이 쭉 당겨짐 == height: 100%
+  */
+  align-items: stretch;
+}
+
+/* 안써도 되지만 확실히 하기 위해 작성 */
+.container-4>div {
+  height: 100%;
+}
+
+.container-4>div:nth-child(2n-1) {
+  width: 10%;
+}
+
+.container-4>div:nth-child(2n) {
+  width: 35%;
+}
+
+
+/* 田 모양 만들기 */
+/* 방법 1 :  */
+
+.container-5 {
+  width: 300px;
+  height: 300px;
+}
+
+/* .container-5>div {
+  height: 50%;
+  width: 100%;
+  display: flex;
+}
+
+.container-5>div>div {
+  height: 100%;
+  width: 50%; 
+}*/ 
+
+.row-50 {
+  height: 50%;
+  width: 100%;
+  display: flex;
+}
+
+.col-50 {
+  height: 100%;
+  width: 50%;
+}
+
+/* 방법 2: flex-wrap 이용 분할 */
+
+.flex {display: flex;}
+.wrap {flex-wrap: wrap;}
+
+.window {
+  width: 50%;
+  height: 50%;
+}

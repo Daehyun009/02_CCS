@@ -1,0 +1,74 @@
+
+
+
+
+
+
+
+
+
+
+
+/* 3순위 : 아이디 선택자 */
+#test1{
+  /* 낮은 우선 순위 덮어 씌움 */
+  height: 100px;
+  color: red;
+  background-color: skyblue;
+
+  /* 새로 추가된 속성(누적) */
+  font-family: '궁서체';
+  font-weight: bold;
+}
+
+
+
+
+/* 4순위 : 클래스 선택자 */
+.cls1{
+  /* 태그명 보다 우선 순위가 높음 */
+  background-color: green;
+
+  /* 글자색 흰색 */
+  /* 똑같은 속성에 대해 값을 설정한적이 없어서
+    그대로 적용 */
+  color: white;
+}
+
+
+/* 5순위 태그 선택자 */
+div{
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+}
+
+div{
+  /* 같은 선택자 여러번 작성 가능 */
+  border: 1px;
+}
+
+div{
+  /* 같은 우선 순위인 경우 마지막 설정이 적용 */
+  background-color: grey;
+}
+
+#test1{
+  /* !important로 같은 우선 순위
+    -> 선택자 우선 순위를 따짐 
+  */
+  background-color: pink !important;
+}
+
+div{
+  /* 1순위 : !important */
+  /* 5순위 -> 1순위로 변경 */
+  background-color: cyan !important;
+}
+
+div{
+  /* !important로 같은 우선 순위
+    -> 마지막에 작성된 설정이 적용
+  */
+  background-color: steelblue !important;
+}

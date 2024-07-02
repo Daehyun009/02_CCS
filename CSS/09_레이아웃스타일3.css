@@ -1,0 +1,140 @@
+* {
+  /* content + padding + border = width/height */
+  box-sizing: border-box;
+
+  /* 
+  html 요소는 각각 고유한 padding, margin을 가지고 있는데
+  이를 모두 없앰 (배치하기 편함)
+*/
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  border: 1px solid black;
+}
+
+/* position : relative + absolute 확인하기 */
+.container-1 {
+  width: 304px;
+  height: 304px;
+  border: 2px solid red;
+  margin: 30px;
+
+  /* 
+  현재 요소를 기준으로 삼음
+  -> 현재 요소 내부에 존재하는 요소들을
+    position:absolute;
+    + top/bottom/left/right를 이용해
+    원하는 위치에 배치할 수 있다. 
+  */
+  position: relative;
+}
+
+.first {
+  width: 300px;
+  height: 300px;
+  background-color: yellow;
+}
+
+.second {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+
+  position: absolute;
+  top: 50px;
+  /* 기준요소 top 기준으로
+    50px 만큼 떨어진 곳에 배치  */
+  left: 50px;
+}
+
+.third {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  top: 100px;
+  left: 100px;
+}
+
+
+/* 요소 정가운데 배치하기 */
+.container-2 {
+  width: 473px;
+  height: 397px;
+  margin: 20px;
+
+  position: relative;
+  /* 기준 */
+}
+
+.center {
+  width: 100px;
+  height: 100px;
+  background-color: pink;
+  border-radius: 50%;
+  /* 원으로 만들기 */
+  position: absolute;
+
+  /* 
+    다른 요소와의 간격을 자동으로 설정
+    -> 보통으로 가로 가운데 정렬만 가능
+    ->absolute인 요소는
+      세로 가운데 정렬하는 방법도 존재
+  */
+  margin: auto;
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* position: fixed(고정) */
+.fixed-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: white;
+
+  position: fixed;
+
+  bottom: 30px;
+  right: 30px;
+}
+
+.fixed-container>a {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  text-align: center;
+  text-decoration: none;/* 밑줄 삭제 */
+  color: black;
+  font-weight: bold;
+
+  line-height: 38px; /* 장평 */
+
+  user-select: none; /* 블럭 금지 */
+  border-radius: 50%;
+}
+
+html{
+  /* 화면 점프 시 스크롤을 스무스하게 해라 */
+  scroll-behavior: smooth;
+}
+
+/* sticky */
+.sticky{
+  BACKGROUND-COLOR: STEELBLUE;
+  COLOR: WHITE;
+  PADDING: 100PX 20PX 30PX;
+
+  POSITION: STICKY;
+
+  /* 화면을 벗어나면 어디에 붙을지 위치를 지정해야 한다 */
+  TOP:-70PX;
+
+  Z-INDEX: 100;
+}

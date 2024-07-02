@@ -1,0 +1,133 @@
+/* 일반 구조 선택자(위치 기준) */
+
+/* 
+  A선택자 > B선택자:first-child
+
+  - A 자식 중
+    첫 번째 자식이 B가 맞으면 선택
+*/
+#test1 > p:first-child{
+  background-color: red;
+  color: white;
+}
+
+/* 
+  A선택자 > B선택자:last-child
+
+  - A 자식 중
+    마지막 자식이 B가 맞으면 선택
+*/
+#test1>p:last-child{
+  background-color: blue;
+  color: white;
+}
+
+/* 
+  A선택자 > B선택자:nth-child(숫자)
+
+  - A 자식 중
+    숫자 번째 자식이 B가 맞으면 선택
+*/
+#test1>p:nth-child(3){
+  background-color: yellow;
+}
+
+/* 
+  A선택자 > B선택자:nth-child(수열)
+
+  - A 자식 중
+    수열 번째 자식이 B가 맞으면 선택
+*/
+#test1>p:nth-child(2n){
+  background-color: pink;
+}
+
+/* 
+  A선택자 > B선택자:nth-last-child(숫자)
+
+  - A 자식 중
+    뒤에서부터 숫자 번째 자식이 B가 맞으면 선택
+*/
+#test1>p:nth-last-child(4){
+  font-size: 24px;
+}
+
+
+
+/* *********************************** */
+
+/* 형태 구조 선택자 */
+
+/* A선택자 > B:first-of-type
+
+  - A의 자식 중 모든 B를 선택한 후
+    그 중 첫 번째 자식만 선택
+*/
+#test2>p:first-of-type{
+  background-color: salmon;
+}
+
+test2>pre:first-of-type{
+  background-color: black;
+  color: white;
+}
+
+/* A선택자 > B:last-of-type
+
+  - A의 자식 중 모든 B를 선택한 후
+    그 중 마지막 자식만 선택
+*/
+#test2>p:last-of-type{
+  background-color: gold;
+}
+
+/* A선택자 > B:nth-of-type(숫자)
+
+  - A의 자식 중 모든 B를 선택한 후
+    그 중 숫자 번째 자식만 선택
+*/
+#test2>p:nth-of-type(4){
+  background-color: red;
+  color: white;
+}
+
+/* A선택자 > B:nth-of-type(수열)
+
+  - A의 자식 중 모든 B를 선택한 후
+    그 중 수열 번째 자식만 선택
+
+    n은 (0,1,2,3,4,....)
+*/
+#test2>p:nth-of-type(2n-1){
+  font-family: 궁서체;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#test2>p:nth-last-of-type(4){
+  cursor: pointer;
+  border: 3px solid black;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 2s;
+}
+
+#test2>p:nth-last-of-type(4):hover{
+  background-color: pink;
+  rotate: 360deg;
+}
+
+
+/* **************************** */
+/* 부정선택자(:not()) */
+
+/* 
+  #test3 자식 중 li태그를 모두 선택한 후
+  그 중 3n 번째를 제외하고 선택
+*/
+#test3>li:not(:nth-of-type(3n)){
+  background-color: pink;
+}

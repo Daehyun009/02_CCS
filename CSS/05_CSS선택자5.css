@@ -1,0 +1,51 @@
+/* :only-child */
+
+/* #test1의 유일한 자식이 p태그인 경우 */
+#test1>p:only-child{
+  background-color: orange;
+}
+
+/* #test2의 유일한 자식이 p태그인 경우 */
+#test2>p:only-child{
+  background-color: red;
+}
+
+
+/* only-of-type */
+
+/* #test3의 자식 중 p태그가 오직 하나일 경우 */
+#test3>p:only-of-type{
+  background-color: pink;
+}
+
+/* #test3의 자식 중 pre태그가 오직 하나일 경우 */
+#test3>pre:only-of-type{
+  background-color: lime;
+}
+
+
+/* :empty */
+
+/* #test4의 자식 p태그 중 자식 노드가 없는 요소 선택 */
+#test4>p:empty{
+  height: 30px;
+  background-color: green;
+}
+
+
+/* 여러 선택자 동시 작성 */
+#test5-1, .test5-2, pre[name='test5-3']{
+  font-size: 24px;
+  font-weight: bold;
+  font-family: '돋움';
+  border-bottom: 3px dashed grey;
+}
+
+/* 여러 클래스가 작성된 요소만 선택하기 */
+.test6{background-color: yellow;}
+.aaa{font-size: 36px;}
+
+/* 클래스 속성 값으로 test6, aaa를 모두 가진 요소 */
+.test6.aaa{
+  color: red;
+}

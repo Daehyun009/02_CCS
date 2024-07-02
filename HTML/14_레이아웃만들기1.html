@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="두">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>14_레이아웃 만들기1</title>
+  <link rel="stylesheet" href="../CSS/14_레이아웃만들기1.css">
+  <link rel="stylesheet" href="../CSS/bg-colors.css">
+</head>
+
+<body>
+
+  <!--
+  시맨틱(의미) 태그(semantic tag) 
+  - 태그명만 보고도 무슨 의미/용도인지 알 수 있게 하는 태그
+
+  - div태그 이름만 바뀐 것이라고 생각하자
+    (이름이 다른 영역 나누기 태그)
+  
+  - 웹 접근성이 향상됨
+  -->
+
+  <!-- 머리 부분(제일 위) 태그 -->
+  <header>
+    <div class="header-1 bg-1">w : 100px</div>
+    <div class="header-2 bg-2">w : 50px</div>
+    <div class="header-3 bg-3">flex-grow</div>
+
+  </header>
+
+  <!-- 주된 내용이 포함되는 영역 -->
+  <main>
+    <section class="content-1 bg-4">h : 290px</section>
+    <section class="content-2 bg-5">h : 160px</section>
+    <section class="content-3 bg-6">flex-grow</section>
+
+  </main>
+
+
+  <!-- 발 부분(제일 아래) 태그 -->
+  <footer>
+    <section class="bg-7">h : 50%</section>
+    <section class="bg-8">h : 50%</section>
+
+  </footer>
+</body>
+
+</html>
